@@ -8,6 +8,7 @@ import {
   useUser,
   useLogin,
 } from "@thirdweb-dev/react";
+import styles from "../styles/Home.module.css";
 
 import { ChainId } from "@thirdweb-dev/sdk";
 import { contractAddress } from "../const/details.js";
@@ -20,7 +21,7 @@ export default function Login() {
   const login = useLogin(); // Sign in
 
   return (
-    <div>
+    <div className={styles.container} style={{ height: 700 }}>
       {address ? (
         <>
           <p>Welcome, {address.slice(0, 6)}...</p>
@@ -29,7 +30,13 @@ export default function Login() {
         </>
       ) : (
         <>
-          <button onClick={() => connectWithMetamask()}>Connect Wallet</button>
+          <button
+            className={styles.mainButton}
+            style={{ width: 256 }}
+            onClick={() => connectWithMetamask()}
+          >
+            Connect Wallet
+          </button>
         </>
       )}
     </div>
