@@ -32,7 +32,7 @@ export default function Login() {
         <>
           <button
             className={styles.mainButton}
-            style={{ width: 256 }}
+            style={{ width: 258 }}
             onClick={() => connectWithMetamask()}
           >
             Connect Wallet
